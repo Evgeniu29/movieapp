@@ -1,10 +1,10 @@
-package com.recepyesilkaya.moviemvvm.data.repository
+package com.genius.movieapp.data.repository
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.recepyesilkaya.moviemvvm.data.api.TheMovieDBInterface
-import com.recepyesilkaya.moviemvvm.data.vo.MovieDetails
+import com.genius.movieapp.data.api.TheMovieDBInterface
+import com.genius.movieapp.data.vo.MovieDetails
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import java.lang.Exception
@@ -34,7 +34,7 @@ class MovieDetailsNetworkDataSource(private val apiService: TheMovieDBInterface,
                         },
                         {
                             _networkState.postValue(NetworkState.ERROR)
-                            Log.e("MovieDetailsDataSource",it.message)
+                            Log.e("MovieDetailsDataSource",it.message!!)
                         }
                     )
             )
@@ -42,7 +42,7 @@ class MovieDetailsNetworkDataSource(private val apiService: TheMovieDBInterface,
 
 
         }catch (e:Exception){
-            Log.e("MovieDetailsDataSource",e.message)
+            Log.e("MovieDetailsDataSource", e.message!!)
         }
 
     }

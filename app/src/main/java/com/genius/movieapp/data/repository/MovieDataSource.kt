@@ -1,11 +1,11 @@
-package com.recepyesilkaya.moviemvvm.data.repository
+package com.genius.movieapp.data.repository
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.PageKeyedDataSource
-import com.recepyesilkaya.moviemvvm.data.api.FIRST_PAGE
-import com.recepyesilkaya.moviemvvm.data.api.TheMovieDBInterface
-import com.recepyesilkaya.moviemvvm.data.vo.Movie
+import com.genius.movieapp.data.api.FIRST_PAGE
+import com.genius.movieapp.data.api.TheMovieDBInterface
+import com.genius.movieapp.data.vo.Movie
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
@@ -33,7 +33,7 @@ class MovieDataSource(
                     },
                     {
                         networkState.postValue(NetworkState.ERROR)
-                        Log.e("MovieDataSource", it.message)
+                        Log.e("MovieDataSource", it.message!!)
                     }
                 )
         )
@@ -57,7 +57,7 @@ class MovieDataSource(
                     },
                     {
                         networkState.postValue(NetworkState.ERROR)
-                        Log.e("MovieDataSource", it.message)
+                        Log.e("MovieDataSource", it.message!!)
                     }
                 )
         )

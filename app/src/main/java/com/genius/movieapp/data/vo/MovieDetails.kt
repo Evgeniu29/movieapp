@@ -1,4 +1,4 @@
-package com.recepyesilkaya.moviemvvm.data.vo
+package com.genius.movieapp.data.vo
 
 
 import com.google.gson.annotations.SerializedName

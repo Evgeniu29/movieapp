@@ -1,4 +1,4 @@
-package com.recepyesilkaya.moviemvvm.data.api
+package com.genius.movieapp.data.api
 
 import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
@@ -14,12 +14,12 @@ const val BASE_URL="https://api.themoviedb.org/3/"
 const val POSTER_BASE_URL="https://image.tmdb.org/t/p/w342"
 
 const val FIRST_PAGE=1
-const val POST_PER_PAGE=20
+const val POST_PER_PAGE=5
 
 
 object TheMovieDBClient{
 
-    fun getClient() : TheMovieDBInterface{
+    fun getClient() : TheMovieDBInterface {
         val requestInterceptor= Interceptor{chain ->
 
             val url=chain.request()

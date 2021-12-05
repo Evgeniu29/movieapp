@@ -1,4 +1,4 @@
-package com.recepyesilkaya.moviemvvm.data.repository
+package com.genius.movieapp.data.repository
 
 enum class Status {
     RUNNING,

@@ -1,4 +1,4 @@
-package com.recepyesilkaya.moviemvvm.ui.single_movie_details
+package com.genius.movieapp.ui.single_movie_details
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,12 +7,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
-import com.recepyesilkaya.moviemvvm.R
-import com.recepyesilkaya.moviemvvm.data.api.POSTER_BASE_URL
-import com.recepyesilkaya.moviemvvm.data.api.TheMovieDBClient
-import com.recepyesilkaya.moviemvvm.data.api.TheMovieDBInterface
-import com.recepyesilkaya.moviemvvm.data.vo.MovieDetails
+import com.genius.movieapp.R
+import com.genius.movieapp.data.api.POSTER_BASE_URL
+import com.genius.movieapp.data.api.TheMovieDBClient
+import com.genius.movieapp.data.api.TheMovieDBInterface
+import com.genius.movieapp.data.vo.MovieDetails
 import kotlinx.android.synthetic.main.activity_single.*
+
 
 class SingleActivity : AppCompatActivity() {
 

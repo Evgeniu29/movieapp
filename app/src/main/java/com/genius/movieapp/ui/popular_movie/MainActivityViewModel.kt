@@ -1,10 +1,10 @@
-package com.recepyesilkaya.moviemvvm.ui.popular_movie
+package com.genius.movieapp.ui.popular_movie
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.paging.PagedList
-import com.recepyesilkaya.moviemvvm.data.repository.NetworkState
-import com.recepyesilkaya.moviemvvm.data.vo.Movie
+import com.genius.movieapp.data.repository.NetworkState
+import com.genius.movieapp.data.vo.Movie
 import io.reactivex.disposables.CompositeDisposable
 
 

@@ -1,4 +1,4 @@
-package com.recepyesilkaya.moviemvvm.ui.popular_movie
+package com.genius.movieapp.ui.popular_movie
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,20 +7,17 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.GridLayoutManager
-import com.recepyesilkaya.moviemvvm.R
-import com.recepyesilkaya.moviemvvm.data.api.TheMovieDBClient
-import com.recepyesilkaya.moviemvvm.data.api.TheMovieDBInterface
-import com.recepyesilkaya.moviemvvm.data.repository.NetworkState
-import kotlinx.android.synthetic.main.activity_main.*
+import com.genius.movieapp.data.api.TheMovieDBClient
+import com.genius.movieapp.data.api.TheMovieDBInterface
+import com.genius.movieapp.data.repository.NetworkState
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import androidx.recyclerview.widget.RecyclerView
+import com.genius.movieapp.R
+import kotlinx.android.synthetic.main.activity_main.*
 
 
-
-
-class MainActivity : AppCompatActivity() {
+ class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MainActivityViewModel
 
@@ -28,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
 
         val apiService : TheMovieDBInterface = TheMovieDBClient.getClient()
@@ -39,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         val movieAdapter = PopularMoviePagedListAdapter(this)
 
         val layoutManager: RecyclerView.LayoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         rv_movie_list.layoutManager = layoutManager
 
