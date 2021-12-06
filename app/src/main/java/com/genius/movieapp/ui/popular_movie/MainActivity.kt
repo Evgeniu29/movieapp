@@ -37,7 +37,7 @@ import kotlinx.android.synthetic.main.activity_main.*
         val movieAdapter = PopularMoviePagedListAdapter(this)
 
         val layoutManager: RecyclerView.LayoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
         rv_movie_list.layoutManager = layoutManager
 

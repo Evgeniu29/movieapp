@@ -9,7 +9,7 @@ import retrofit2.http.Query
 
 interface TheMovieDBInterface {
 
-    @GET("movie/popular")
+    @GET("movie/top_rated")
     fun getPopularMovie(@Query("page") page: Int): Single<MovieResponse>
 
     @GET("movie/{movie_id}")
