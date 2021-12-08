@@ -17,7 +17,11 @@ import com.genius.movieapp.ui.single_movie_details.SingleActivity
 import kotlinx.android.synthetic.main.movie_list_item.view.*
 import kotlinx.android.synthetic.main.network_state_item.view.*
 
-class PopularMoviePagedListAdapter(public val context: Context) : PagedListAdapter<Movie, RecyclerView.ViewHolder>(MovieDiffCallback()) {
+// todo public? copy\paste from java?
+class PopularMoviePagedListAdapter(
+    public val context: Context,
+    private val clickListener:(Int?) -> Unit
+) : PagedListAdapter<Movie, RecyclerView.ViewHolder>(MovieDiffCallback()) {
 
     val MOVIE_VIEW_TYPE = 1
     val NETWORK_VIEW_TYPE = 2
@@ -79,7 +83,7 @@ class PopularMoviePagedListAdapter(public val context: Context) : PagedListAdapt
     }
 
 
-    class MovieItemViewHolder (view: View) : RecyclerView.ViewHolder(view) {
+    inner class MovieItemViewHolder (view: View) : RecyclerView.ViewHolder(view) {
 
         fun bind(movie: Movie?, context: Context) {
             itemView.cv_movie_title.text = movie?.title
@@ -90,7 +94,9 @@ class PopularMoviePagedListAdapter(public val context: Context) : PagedListAdapt
                 .load(moviePosterURL)
                 .into(itemView.cv_iv_movie_poster);
 
+            // todo better don't do this from adapter, use listener for communication
             itemView.setOnClickListener{
+                clickListener(movie?.id)
                 val intent = Intent(context, SingleActivity::class.java)
                 intent.putExtra("id", movie?.id)
                 context.startActivity(intent)
@@ -111,7 +117,7 @@ class PopularMoviePagedListAdapter(public val context: Context) : PagedListAdapt
             }
 
             if (networkState != null && networkState == NetworkState.ERROR) {
-                itemView.error_msg_item.visibility = View.VISIBLE;
+                itemView.error_msg_item.visibility = View.VISIBLE; // todo copy paste from java
                 itemView.error_msg_item.text = networkState.msg;
             }
             else if (networkState != null && networkState == NetworkState.ENDOFLIST) {

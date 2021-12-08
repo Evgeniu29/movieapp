@@ -9,6 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 
+// todo store your keys and other sensitive data into local.properties especially if your project is open source!
 const val API_KEY="8835e164059f2a901b52381b193852d0"
 const val BASE_URL="https://api.themoviedb.org/3/"
 const val POSTER_BASE_URL="https://image.tmdb.org/t/p/w342"
@@ -16,7 +17,7 @@ const val POSTER_BASE_URL="https://image.tmdb.org/t/p/w342"
 const val FIRST_PAGE=1
 const val POST_PER_PAGE=5
 
-
+// todo why you don't use DI for this? Try to use hilt or koin, they are very simple
 object TheMovieDBClient{
 
     fun getClient() : TheMovieDBInterface {
