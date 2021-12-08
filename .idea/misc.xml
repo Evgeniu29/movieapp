@@ -13,6 +13,8 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/MovieApp/app/src/main/res/layout/movie_list_item.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MovieApp/app/src/main/res/layout/network_state_item.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MovieApp/app/src/main/res/menu/menu_main.xml" value="0.20520833333333333" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.5760416666666667" />
+        <entry key="app/src/main/res/layout/activity_single.xml" value="0.5760416666666667" />
       </map>
     </option>
   </component>

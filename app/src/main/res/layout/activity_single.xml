@@ -45,6 +45,7 @@
                         android:textStyle="bold"
                         android:textSize="18sp"/>
 
+                    <!-- TODO put string in string res! -->
                     <TextView
                         android:id="@+id/movie_overview"
                         android:layout_width="wrap_content"

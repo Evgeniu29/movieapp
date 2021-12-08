@@ -28,17 +28,23 @@ import kotlinx.android.synthetic.main.activity_main.*
 
         setContentView(R.layout.activity_main)
 
+        // todo you should create this in DI module and inject directly in use case or interactor
         val apiService : TheMovieDBInterface = TheMovieDBClient.getClient()
 
+        // todo same
         movieRepository = MoviePagedListRepository(apiService)
 
         viewModel = getViewModel()
 
-        val movieAdapter = PopularMoviePagedListAdapter(this)
+        val movieAdapter = PopularMoviePagedListAdapter(this){ movieId: Int? ->
+            // todo open new activity here
+            println(movieId)
+        }
 
         val layoutManager: RecyclerView.LayoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
+        // todo extensions are deprecated, suggest to use viewBinding
         rv_movie_list.layoutManager = layoutManager
 
         rv_movie_list.adapter = movieAdapter
@@ -48,7 +54,7 @@ import kotlinx.android.synthetic.main.activity_main.*
         })
 
         viewModel.networkState.observe(this, Observer {
-            progress_bar_popular.visibility = if (viewModel.listIsEmpty() && it == NetworkState.LOADING) View.VISIBLE else View.GONE
+            progress_bar_popular.visibility = if (viewModel.listIsEmpty() && it == NetworkState.LOADING) View.VISIBLE else View.GONE // todo very long line, try to write 100 symbols or less in 1 line
             txt_error_popular.visibility = if (viewModel.listIsEmpty() && it == NetworkState.ERROR) View.VISIBLE else View.GONE
 
             if (!viewModel.listIsEmpty()) {
